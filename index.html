@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>The Wizarding Codex | Algorithm Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="The Wizarding Codex home">
+      <span class="brand-mark">✦</span>
+      <span><strong>The Wizarding Codex</strong><small>ALGORITHM GRIMOIRE</small></span>
+    </a>
+    <nav><a href="#sorting">Sorting</a><a href="#pathfinding">Pathfinding</a><a href="#about">About</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> INTERACTIVE ALGORITHM LAB</div>
+      <h1>Magic is just <span>logic</span><br>made visible.</h1>
+      <p>Explore the hidden mechanics of algorithms. Watch data rearrange, paths emerge, and computer science come to life—one step at a time.</p>
+      <div class="hero-actions"><a class="button primary" href="#sorting">Explore sorting <span>↘</span></a><a class="button ghost" href="#pathfinding">Find a path</a></div>
+      <div class="hero-stats"><div><strong>05</strong><span>Sorting spells</span></div><div><strong>03</strong><span>Pathfinding methods</span></div><div><strong>∞</strong><span>Ways to learn</span></div></div>
+    </section>
+
+    <section class="workspace" id="sorting">
+      <div class="section-heading"><div><div class="eyebrow">CHAPTER I · ORDER FROM CHAOS</div><h2>The Sorting Chamber</h2></div><span class="chapter-icon">⌁</span></div>
+      <p class="section-copy">Choose an algorithm and watch it arrange the collection into order.</p>
+      <div class="panel">
+        <div class="toolbar">
+          <label>Algorithm<select id="sortAlgorithm"><option value="bubble">Bubble Sort</option><option value="selection">Selection Sort</option><option value="insertion">Insertion Sort</option><option value="merge">Merge Sort</option><option value="quick">Quick Sort</option></select></label>
+          <label class="range-label">Array size <span id="sizeValue">45</span><input id="arraySize" type="range" min="12" max="90" value="45"></label>
+          <label class="range-label">Speed <span id="speedValue">Medium</span><input id="sortSpeed" type="range" min="1" max="5" value="3"></label>
+          <button id="newArray" class="button ghost">↻ New array</button>
+          <button id="sortButton" class="button primary">▶ Visualize</button>
+        </div>
+        <div class="legend"><span><i class="legend-bar"></i> Unsorted</span><span><i class="legend-bar compare"></i> Comparing</span><span><i class="legend-bar sorted"></i> Sorted</span></div>
+        <div id="bars" class="bars" role="img" aria-label="Animated sorting bars"></div>
+        <div class="status-line"><span id="sortStatus">Ready to cast a sorting spell.</span><span id="sortStats">Comparisons: 0 · Swaps: 0</span></div>
+      </div>
+    </section>
+
+    <section class="workspace" id="pathfinding">
+      <div class="section-heading"><div><div class="eyebrow">CHAPTER II · THE WAYFINDER'S MAP</div><h2>The Pathfinding Lab</h2></div><span class="chapter-icon">⌖</span></div>
+      <p class="section-copy">Draw walls, select a search strategy, and discover a route from start to destination.</p>
+      <div class="panel">
+        <div class="toolbar path-toolbar">
+          <label>Algorithm<select id="pathAlgorithm"><option value="bfs">Breadth-First Search (BFS)</option><option value="dfs">Depth-First Search (DFS)</option><option value="dijkstra">Dijkstra's Algorithm</option></select></label>
+          <button id="clearWalls" class="button ghost">Clear walls</button>
+          <button id="clearPath" class="button ghost">Clear path</button>
+          <button id="findPath" class="button primary">⌁ Find path</button>
+        </div>
+        <div class="grid-help"><span><i class="key start-key"></i> Start</span><span><i class="key end-key"></i> Destination</span><span><i class="key wall-key"></i> Wall</span><span><i class="key visited-key"></i> Visited</span><span class="hint">Click and drag cells to draw walls.</span></div>
+        <div id="grid" class="path-grid" aria-label="Pathfinding grid"></div>
+        <div class="status-line"><span id="pathStatus">Ready to chart a route.</span><span id="pathStats">Visited: 0 · Path length: 0</span></div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="eyebrow">THE IDEA BEHIND THE MAGIC</div>
+      <h2>Understand the <span>why</span>, not just the result.</h2>
+      <p>The Wizarding Codex turns abstract algorithms into interactive experiences. Experiment with different approaches, compare their behavior, and build intuition for the logic that powers them.</p>
+      <div class="concept-cards"><article><span>01 / SORT</span><h3>Divide & conquer</h3><p>Compare simple iterative methods with divide-and-conquer strategies.</p></article><article><span>02 / SEARCH</span><h3>Explore the frontier</h3><p>See how search strategies visit nodes and uncover routes through a grid.</p></article><article><span>03 / LEARN</span><h3>Learn by doing</h3><p>Change inputs, rerun algorithms, and observe how behavior changes.</p></article></div>
+    </section>
+  </main>
+  <footer><span>✦ The Wizarding Codex</span><span>Built to make algorithms visible.</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
